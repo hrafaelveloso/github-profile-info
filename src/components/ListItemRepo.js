@@ -2,17 +2,17 @@ import React from "react";
 import { ListItem, ListItemText } from "@material-ui/core";
 import PropTypes from "prop-types";
 
-const InfoRepoItem = ({ primary, secondary }) => {
+const ListItemRepo = ({ primary, secondary }) => {
   return (
-    <ListItem>
+    <ListItem disableGutters>
       <ListItemText primary={primary} secondary={secondary} />
     </ListItem>
   );
 };
 
-InfoRepoItem.propTypes = {
+ListItemRepo.propTypes = {
   primary: PropTypes.string.isRequired,
-  secondary: PropTypes.string.isRequired,
+  secondary: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
-export default InfoRepoItem;
+export default ListItemRepo;
